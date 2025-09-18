@@ -1,0 +1,132 @@
+/* src/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* chặn tràn ngang */
+html, body, #root { overflow-x: hidden; }
+
+/* khoảng cách dọc giữa các section */
+.section { @apply py-12 md:py-16; }
+
+/* Card bo góc, viền… (tuỳ dự án) */
+.card { @apply rounded-2xl border bg-white shadow-sm overflow-hidden; }
+
+/* ===== FULL-BLEED CHUẨN ===== */
+.full-bleed{
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;   /* kéo về sát mép trái viewport */
+  margin-right: -50vw;  /* kéo về sát mép phải viewport */
+}
+
+/* styling cho hero text cho dễ đọc */
+.hero-heading{
+  text-shadow: 0 2px 18px rgba(0,0,0,.55);
+}
+/* ===== Typography – dùng chung cho toàn site ===== */
+
+/* Khoảng cách dọc chuẩn giữa các section */
+.section { @apply py-12 md:py-16; }
+
+/* Tiêu đề lớn của section */
+.section-title {
+  @apply font-extrabold tracking-tight text-black;
+  /* min 28px, ưu tiên 4.3vw, max 48px */
+  font-size: clamp(28px, 4.3vw, 48px);
+  line-height: 1.15;
+}
+
+/* Đoạn giới thiệu/lead ngay dưới tiêu đề */
+.section-lead {
+  @apply text-black/80;
+  font-size: clamp(18px, 2.1vw, 22px);
+  line-height: 1.65;
+}
+
+/* Đoạn văn thân bài */
+.section-body {
+  @apply text-black/80;
+  font-size: clamp(16px, 1.9vw, 20px);
+  line-height: 1.7;
+}
+
+/* Danh sách (ul/li) trong section */
+.section-list {
+  @apply list-disc pl-6 text-black/90 space-y-2;
+  font-size: clamp(16px, 1.9vw, 20px);
+  line-height: 1.7;
+}
+
+/* Caption ngắn dưới ảnh/card */
+.caption {
+  @apply text-black/60;
+  font-size: clamp(13px, 1.3vw, 16px);
+}
+
+/* Nút lớn (dùng cho form, hero, banner…) */
+.btn-lg {
+  @apply inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold;
+  font-size: clamp(14px, 1.7vw, 18px);
+}
+
+/* Navbar */
+.nav-brand {
+  @apply font-extrabold tracking-tight;
+  font-size: clamp(18px, 2.1vw, 22px);
+}
+.nav-link {
+  @apply font-medium text-black/80 hover:text-black transition;
+  font-size: clamp(14px, 1.6vw, 16.5px);
+}
+
+/* Footer */
+.footer-heading {
+  @apply font-semibold;
+  font-size: clamp(16px, 1.8vw, 20px);
+}
+.footer-text {
+  @apply text-black/70;
+  font-size: clamp(14px, 1.6vw, 16.5px);
+  line-height: 1.65;
+}
+
+/* Hero (tiêu đề cực lớn) */
+.hero-title {
+  @apply font-extrabold tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,.55)];
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.1;
+}
+.hero-subtitle {
+  @apply text-white/95 drop-shadow-[0_1px_8px_rgba(0,0,0,.45)];
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.6;
+}
+/* === Attention animations for Floating Buttons === */
+
+/* Nhảy nhẹ lên xuống */
+@keyframes softBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.bounce-soft { animation: softBounce 1.8s ease-in-out infinite; }
+
+/* Nháy/Glow xanh (Zalo) */
+@keyframes glowBlue {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,104,255,.45), 0 0 12px rgba(0,104,255,.5); }
+  50%      { box-shadow: 0 0 0 8px rgba(0,104,255,0), 0 0 22px rgba(0,104,255,.9); }
+}
+.btn-glow-blue { animation: glowBlue 1.6s ease-in-out infinite; }
+
+/* Nháy/Glow đỏ (Call) */
+@keyframes glowRed {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,.45), 0 0 12px rgba(220,38,38,.5); }
+  50%      { box-shadow: 0 0 0 8px rgba(220,38,38,0), 0 0 22px rgba(220,38,38,.9); }
+}
+.btn-glow-red { animation: glowRed 1.6s ease-in-out infinite; }
+
+/* Delay để hai nút nhảy/nháy lệch pha, nhìn tự nhiên hơn */
+.anim-delay-300 { animation-delay: .3s; }
+.anim-delay-600 { animation-delay: .6s; }
