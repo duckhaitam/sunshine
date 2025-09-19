@@ -1,3 +1,30 @@
-<!doctype html><html lang='vi'><head><meta charset='UTF-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0'/><title>Sunshine Legend City — Demo</title></head><body class='antialiased scroll-smooth'><div id='root'></div><script type='module' src='/src/main.jsx'></script></body></html><body>
-  <div id="root"></div>
-</body>
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preload ảnh hero: chú ý tên file là hero1 (không có dấu gạch ngang) -->
+    <link
+      rel="preload"
+      as="image"
+      href="/img/hero1-1200.avif"
+      imagesrcset="/img/hero1-480.avif 480w, /img/hero1-768.avif 768w, /img/hero1-1200.avif 1200w, /img/hero1-1600.avif 1600w"
+      imagesizes="100vw"
+      type="image/avif"
+      fetchpriority="high"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+<!-- index.html -->
+<link rel="preload"
+      as="image"
+      href="/img/hero1-1200.avif"
+      type="image/avif"
+      imagesrcset="/img/hero1-480.avif 480w, /img/hero1-768.avif 768w, /img/hero1-1200.avif 1200w, /img/hero1-1600.avif 1600w"
+      imagesizes="100vw"
+      fetchpriority="high">
